@@ -1,0 +1,315 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-6 mt-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="historipatient" id="radiohistori1" value="Current" checked="">
+                    <label class="form-check-label" for="radiohistori1">Atenci&oacute;n al Paciente</label>
+                </div>
+            </div>
+            <div class="col-6 mt-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="historipatient" id="radiohistori2" value="History">
+                    <label class="form-check-label" for="radiohistori2">Historia Me&eacute;dica</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 mt-3">
+        <input type="submit" class="btn btn-dark form-control btn-form btn-command" id="saveFormComplete" name="saveFormatPatient" value="Terminar Cita">
+    </div>
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col mt-3">
+                <button class="btn btn-dark" id="almacenarobservacion"><i class="bi bi-journal-text"></i></button>
+            </div>
+            <div class="col mt-3">
+                <button class="btn btn-dark" id="mirarobservaciones"><i class="bi bi-eye-fill"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="contenatencionpaciente">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-floating mb-3">
+            <select class="form-select" id="selectformpatient">
+                <option value="Select">Selecccionar</option>
+                <option value="Order">Formulario 1</option>
+                <option value="Order Medical">Formulario 2</option>
+                <option value="Order Medical">Formulario 3</option>
+                <option value="Order Medical">Formulario 4</option>
+            </select>
+            <label for="idpatientattendmodal">Seleccionar Formulario</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-floating mb-3 input-group">
+                <select id="idselecciondeopciones" class="form-select">
+                    <option value="0">Seleccionar consentimiento</option>
+                    <option value="">Consentimiento 1</option>
+                    <option value="">Consentimiento 2</option>
+                    <option value="">Consentimiento 3</option>
+                    <option value="">Consentimiento 4</option>
+                </select>
+                <span class="input-group-btn">
+                    <button id="btnseleccionaropcion" style="height: 100%;" class="btn btn-dark" type="button"> 
+                        <i class="bi bi-plus-square-fill"></i>
+                    </button>
+                </span>
+                <label for="idselecciondeopciones">Seleccionar Consentimiento</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <div class="tab-content" id="contenidohistoriaclinicatabpanel">
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<div id="historipatient" style="display: none;">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-floating mb-3">
+                <select class="form-select" id="selectdateappointment"><option value="0" selected="">Seleccionar</option><option value="53">2023-10-04</option><option value="48">2023-09-30</option><option value="50">2023-09-29</option></select>
+                <label for="selectdateappointment">Seleccionar Cita</label>
+              </div>
+        </div>
+        <div class="col-sm-6">
+            <button class="btn btn-dark" >Historia M&eacute;dica</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <div class="tab-content" id="contenidohistoriaclinicatabpanel">
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+<!-- Modal Selecionar Recomendaciones-->
+<div class="modal fade" id="modalrecomendaciones" tabindex="-1" aria-labelledby="createMicroserviceModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="createMicroserviceModalLabel">Recommendations</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col">
+<ul class="list-group list-group-flush" id="ulrecomendaciones">
+<div id="recomendacionesdiv"><li class="list-group px-0"><div class="d-flex"><div class="form-check"><label class="form-check-label" for="flexCheckDefault">Cleaning</label><i class="bi bi-plus-square-fill text-primary recomendation-a" data-nombre="Cleaning" data-idruta="17" "="" onclick="selectrecomendations(this)"></i></div></div></li><li class="list-group px-0"><div class="d-flex"><div class="form-check"><label class="form-check-label" for="flexCheckDefault">Extraction</label><i class="bi bi-plus-square-fill text-primary recomendation-a" data-nombre="Extraction" data-idruta="36" "="" onclick="selectrecomendations(this)"></i></div></div></li><li class="list-group px-0"><div class="d-flex"><div class="form-check"><label class="form-check-label" for="flexCheckDefault">x-ray</label><i class="bi bi-plus-square-fill text-primary recomendation-a" data-nombre="x-ray" data-idruta="21" "="" onclick="selectrecomendations(this)"></i></div></div></li></div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal utilizar insumo-->
+<div class="modal fade" id="modalsuministros" tabindex="-1" aria-labelledby="createMicroserviceModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="createMicroserviceModalLabel">Supplies</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col">
+<div class="form-floating mb-2">
+<select id="selectinsumo" class="form-select"></select>
+<label for="selectinsumo">Supplies</label>
+</div>
+</div>
+<div class="col">
+<div class="form-floating mb-2">
+<input type="number" class="form-control" id="cantidadinsumo">
+<label for="cantidadinsumo" id="medidainsumoalmacenada">Amount</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<div class="form-floating mb-2">
+<input type="number" class="form-control" id="Availability" readonly="">
+<label for="Availability">Availability</label>
+</div>
+</div>
+<div class="col">
+<input type="hidden" class="form-control" id="idpacienteinsumo">
+<input type="hidden" class="form-control" id="idcitainsumo">
+<button type="button" class="btn btn-primary" id="btnalmacenarsupplies">Use Supplies</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal agregar notas-->
+<div class="modal fade" id="almacenarnotamodal" tabindex="-1" aria-labelledby="createMicroserviceModalLabel" style="display: none;" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="createMicroserviceModalLabel">Notas</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col">
+<div class="form-floating mb-2">
+<textarea class="form-control" id="notaobservacion"></textarea>
+<label for="selectinsumo">Nota</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<input type="hidden" class="form-control" id="idpacienteobservacion" value="123">
+<button type="button" class="btn btn-dark" id="btnalmacenarnota">Almacenar Nota</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal observar notas-->
+<div class="modal fade" id="observarnotas" tabindex="-1" aria-labelledby="createMicroserviceModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="createMicroserviceModalLabel">Notes</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+    <div class="modal-body">
+        <ul id="list_notas" class="list-group list-group-flush">
+            <li class="list-group-item px-0">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="name_doctor fw-bold">
+                            2023-10-23
+                        </div>
+                        <label class="id_doctor">Nota 1</label>
+                    </div>
+                    <span class="badge bg-dark" style="cursor:pointer;">Ok</span>
+                </div>
+            </li>
+            <li class="list-group-item px-0">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="name_doctor fw-bold">
+                            2023-10-23
+                        </div>
+                        <label class="id_doctor">Nota 2</label>
+                    </div>
+                    <span class="badge bg-dark" style="cursor:pointer;">Ok</span>
+                </div>
+            </li>
+            <li class="list-group-item px-0">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="name_doctor fw-bold">
+                            2023-10-23
+                        </div>
+                        <label class="id_doctor">Nota 3</label>
+                    </div>
+                    <span class="badge bg-dark" style="cursor:pointer;">Ok</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+<!-- Popup Consentimientos Informados -->
+<div id="popupconsentimientosinformados" style="display: none;">
+    <div class="content-popuphc">
+      <input type="hidden" id="idconsentimientoinput" value="1">
+      <input type="hidden" id="idpacienteinput" value="123">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeHc">Salir</button>
+      <button type="button" class="btn btn-dark" id="btnprintsignature" onclick="imprimirConsentimiento()"> Print</button>
+      <button type="button" class="btn btn-dark" id="btnsignature" onclick="firmadigital(this)" data-idpaciente="123" data-idconsentimiento="1"> Firmar</button>
+      <button type="button" class="btn btn-dark" id="btnuplodasignature" onclick="subirfirmadigital(this)" data-idpaciente="123" data-idconsentimiento="1"> Cargar Firma</button>
+      <button type="button" class="btn btn-dark" id="btndeletesignature" onclick="eliminarfirmadigital(this)" data-idpaciente="123" data-idconsentimiento="1"> Eliminar Firma</button>
+      <br><hr>
+      <div id="contentconsen">
+        <div id="cuerpoconsentimiento">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img 
+                    src="../Img/logo.png" class="img-fluid"></div><div class="col-sm-9"><center><b><span>Kheiros Stetic</span></b><br><b>NIT: <span>987654321</span></b><br><b><span>23961 Calle de la Magdalena ste 300</span></b><br><b><span>Laguna Hills</span>&nbsp;<span>CA</span>&nbsp;<span>949900530</span></b><br><b><span>billing@khkeiros.me</span></b><br></center></div><br><br><br><hr><hr></div><div class="textdiv"><center><b id="ixuk">X-RAY FORM</b></center></div><div class="textdiv">During your examination, the doctor may feel that x-rays/pictures will be needed in order to diagnose your condition. We would like to make you aware that x-rays may be required in order to administer treatment. In order to perform x-rays/pictures o any patient our office requires the patients consent for such tests be performed.</div><div class="row"><div class="  col"><div class="textdiv">I understand that my doctor may need x-rays/pictures in order to diagnose my condition. I give my permission of all needed diagnostic tests and for such items to be used for purposes of fresearch, education or publication in professional journals.</div></div><div class="cell col"><div class="textdiv">I understand that my condition may require my doctor to take x-rays to further diagnose my symptoms. I choose not to have any x-rays/pictures at this time and release my doctor of all liabilities.</div></div></div><div class="row"><div class="col"><div class="textdiv"><b>Female Only:</b></div></div></div><div class="textdiv">I understand that if I am pregnant and have x-rays taken which expose my lower torso to radiation, it is possible to injure tje fetus.<div><br></div><div>I have been advised that ten(10) days following onset of a menstrual period are generally considered to be safe for x-rays exams.</div></div><br><br><br><div class="row"> <div class="col"><span class="firmadigital"><img style="width: 33%;margin-bottom: -53px;" src="/recursos/Signatures/651bc5ad57633.png"></span><br>_______________________________<br><b>Patient: </b>Felipe<br><b>ID Patient: </b>123<br></div></div><style>* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}.textdiv{margin-top:10px;margin-bottom:10px;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;}.cell{width:8%;display:table-cell;height:65px;}@media (max-width: 768px){.cell{width:100%;display:block;}}</style></div>
+      </div>
+      <hr>
+    </div>
+</div>
+<!-- Modal subir firma-->
+<div class="modal fade" id="subirfirmadigitalmodal" tabindex="-1" aria-labelledby="createMicroserviceModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="createMicroserviceModalLabel">Cargar Firma</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<input type="hidden" id="idpacienteinputsig">
+<input type="hidden" id="idconsentimientosig">
+<input type="hidden" id="firmadigitalsig">
+<div class="row">
+<div class="col">
+<div class="form-floating mb-3">
+<input accept="image/png,image/jpeg" type="file" class="form-control" id="filesignature">
+<label for="filesignature">Cargar</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<button type="button" class="btn btn-dark" id="btnupload">Cargar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+    $("input[name=historipatient]").click(function () {
+    var seleccion = $('input:radio[name=historipatient]:checked').val();
+        if((seleccion == 'History') == true){
+            $('#contenatencionpaciente').hide();
+            $('#historipatient').show();
+        }else{
+            $('#contenatencionpaciente').show();
+            $('#historipatient').hide();
+        }
+    });
+    $("#saveFormComplete").on( "click", function() {
+        var win = window.open('http://localhost:8080/Estetica/Vista/home.html?opc=AtencionPaciente', '_self');
+        win.focus();
+    });
+    $("#almacenarobservacion").on( "click", function() {
+        $('#almacenarnotamodal').modal('show');
+    });
+    $("#mirarobservaciones").on( "click", function() {
+        $('#observarnotas').modal('show');
+    });
+    $("#btnseleccionaropcion").on( "click", function() {
+        $('#popupconsentimientosinformados').show();
+    });
+    $("#closeHc").on( "click", function() {
+        $('#popupconsentimientosinformados').hide();
+    });
+    function subirfirmadigital(option){
+        $('#subirfirmadigitalmodal').modal('show');
+    };
+    function firmadigital(option){
+        var win = window.open('http://localhost:8080/Estetica/Vista/home.html?opc=CargarFirma', '_self');
+        win.focus();
+    };
+</script>

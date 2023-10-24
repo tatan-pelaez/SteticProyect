@@ -1,0 +1,77 @@
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-floating mb-2" >
+            <input type="text" class="form-control" id="usuario">
+            <label for="usuario">Usuario</label>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-floating mb-2" >
+            <input type="password" class="form-control" id="clave">
+            <label for="clave">Clave</label>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-floating mb-2" >
+            <input type="password" class="form-control" id="confirmarclave">
+            <label for="confirmarclave">Confirmar Clave</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-floating mb-2" >
+            <input type="email" class="form-control" id="email">
+            <label for="email">Correo</label>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-floating mb-2">
+            <select class="form-select" id="rol" placeholder="Restaurante">
+                <option value="0">Seleccionar</option>
+                <option value="1">Administrador</option>
+                <option value="2">Recepcionista</option>
+                <option value="3">Enfermera</option>
+                <option value="4">Doctor</option>
+            </select>
+            <label for="rol">Rol</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="display: flex;justify-content: center;align-items: center;">
+        <center>
+            <button class="btn btn-dark">Almacenar</button>
+        </center>
+    </div>
+</div>
+<hr>
+<diw class="row">
+    <div class="col">
+        <div class="table-responsive">
+            <table class="table table-striped" id="tablausuarios">
+                <thead>
+                    <tr>
+                        <th><center>Usuario</center></th>
+                        <th><center>Correo Electr&oacute;nico</center></th>
+                        <th><center>Rol</center></th>
+                        <th><center>Acciones</center></th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyusuariosH">
+                    <tr>
+                        <td align="center">Admin</td>
+                        <td align="center">admin@gmail.com</td>
+                        <td align="center">administrador</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td align="center">User</td>
+                        <td align="center">user@gmail.com</td>
+                        <td align="center">Recepci&oacute;n</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</diw>

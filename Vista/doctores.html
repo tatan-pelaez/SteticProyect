@@ -1,0 +1,189 @@
+<div class="row">
+    <div class="col-sm-3">
+        <div class="form-floating mb-2">
+            <select id="SpecialtyDoctors" class="form-select" aria-label="serviceTypeFrm" name="SpecialtyDoctors" onchange="selectSpecialty(this)">
+                <option value="0">Selecccione</option>
+                <option value="0">Consultorio 1</option>
+                <option value="0">Consultorio 2</option>
+                <option value="0">Consultorio 3</option>
+                <option value="0">Consultorio 4</option>
+            </select>
+            <label for="professionalFrm">Seleccionar Consultorio</label>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-floating mb-2">
+            <select id="SpecialtyDoctors" class="form-select" aria-label="serviceTypeFrm" name="SpecialtyDoctors" onchange="selectSpecialty(this)">
+                <option value="0">Selecccione</option>
+                <option value="0">Doctor 1</option>
+                <option value="0">Doctor 2</option>
+                <option value="0">Doctor 3</option>
+                <option value="0">Doctor 4</option>
+            </select>
+            <label for="professionalFrm">Seleccionar Doctor</label>
+        </div>
+    </div>
+    <div class="col-sm-3" style="display: flex;justify-content: center;align-items: center;">
+        <center>
+            <button class="btn btn-dark">Almacenar</button>
+        </center>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-body h-100 overflow-hidden">
+                <h5 class="subtitle c-secondary">Turnos</h5>
+                <ul id="listShifts" class="list-group list-group-flush overflow-auto" style="height: calc(100% - 28px);overflow-x: hidden !important;">
+                    <li class="list-group-item px-0" data-shift="2">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input checkshift">
+                                    <label class="form-check-label fw-semibold" for="shift">
+                                        Turno 1
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <span class="badge text-bg-dark ">Lun</span>
+                                <span class="badge text-bg-dark ">Mar</span>
+                                <span class="badge text-bg-dark ">Mie</span>
+                                <span class="badge text-bg-dark ">Jue</span>
+                                <span class="badge text-bg-dark ">Vie</span>
+                                <span class="badge text-bg-dark d-none">Sad</span>
+                                <span class="badge text-bg-dark d-none">Dom</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span><small>2023-01-01 | 2023-12-31</small></span>
+                            </div><div class="col">
+                                <span><small>07:00 | 17:00</small></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item px-0" data-shift="2">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input checkshift">
+                                    <label class="form-check-label fw-semibold" for="shift">
+                                        Turno 2
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <span class="badge text-bg-dark ">Lun</span>
+                                <span class="badge text-bg-dark ">Mar</span>
+                                <span class="badge text-bg-dark ">Mie</span>
+                                <span class="badge text-bg-dark ">Jue</span>
+                                <span class="badge text-bg-dark ">Vie</span>
+                                <span class="badge text-bg-dark d-none">Sad</span>
+                                <span class="badge text-bg-dark d-none">Dom</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span><small>2023-01-01 | 2023-12-31</small></span>
+                            </div><div class="col">
+                                <span><small>07:00 | 17:00</small></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item px-0" data-shift="2">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input checkshift">
+                                    <label class="form-check-label fw-semibold" for="shift">
+                                        Turno 3
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <span class="badge text-bg-dark ">Lun</span>
+                                <span class="badge text-bg-dark ">Mar</span>
+                                <span class="badge text-bg-dark ">Mie</span>
+                                <span class="badge text-bg-dark ">Jue</span>
+                                <span class="badge text-bg-dark ">Vie</span>
+                                <span class="badge text-bg-dark d-none">Sad</span>
+                                <span class="badge text-bg-dark d-none">Dom</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span><small>2023-01-01 | 2023-12-31</small></span>
+                            </div><div class="col">
+                                <span><small>07:00 | 17:00</small></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item px-0" data-shift="2">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input checkshift">
+                                    <label class="form-check-label fw-semibold" for="shift">
+                                        Turno 4
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <span class="badge text-bg-dark ">Lun</span>
+                                <span class="badge text-bg-dark ">Mar</span>
+                                <span class="badge text-bg-dark ">Mie</span>
+                                <span class="badge text-bg-dark ">Jue</span>
+                                <span class="badge text-bg-dark ">Vie</span>
+                                <span class="badge text-bg-dark d-none">Sad</span>
+                                <span class="badge text-bg-dark d-none">Dom</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span><small>2023-01-01 | 2023-12-31</small></span>
+                            </div><div class="col">
+                                <span><small>07:00 | 17:00</small></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="table-responsive">
+            <table class="table table-striped" id="tablausuarios">
+                <thead>
+                    <tr>
+                        <th><center>Doctor</center></th>
+                        <th><center>Consultorio</center></th>
+                        <th><center>Acciones</center></th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyusuariosH">
+                    <tr>
+                        <td align="center">Doctor 1</td>
+                        <td align="center">Consultorio 1</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Doctor 2</td>
+                        <td align="center">Consultorio 2</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Doctor 3</td>
+                        <td align="center">Consultorio 3</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Doctor 4</td>
+                        <td align="center">Consultorio 4</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

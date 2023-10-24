@@ -1,0 +1,95 @@
+<!-- GRAPES JS-->
+<script src="../Recursos/GrapesJS/js/lib/grapes.min.js"></script>
+<script src="../Recursos/GrapesJS/js/lib/bootstrap.min.js"></script>
+<script src="../Recursos/GrapesJS/js/lib/popper.min.js"></script>
+<script src="../Recursos/GrapesJS/js/lib/grapesjs-preset-webpage.min.js"></script>
+
+<link rel="stylesheet" href="../Recursos/GrapesJS/css/lib/grapes.min.css" />
+<link rel="stylesheet" type="text/css" href="../Recursos/GrapesJS/css/lib/bootstrap.min.css">
+<link rel="stylesheet" href="../Recursos/GrapesJS/css/lib/grapesjs-preset-webpage.min.css" />
+<link rel="stylesheet" href="../Recursos/GrapesJS/css/main.css" />
+<div class="row py-2">
+    <div class="col-sm-4">
+        <input type="text" id="nameform" class="form-control" placeholder="Nombre Formulario" name="tittle" required />
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-dark form-control btn-form">Almacenar</button>
+    </div>
+    <div class="col-sm-2">
+        <div class="panel__devices"></div>
+        </div>
+    <div class="col-sm-2">
+        <div class="panel__basic__actions"></div>
+        </div>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <div id="editor">
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button 
+                         class="nav-link active"
+                        id="blockgrapes-tab"
+                        data-bs-toggle="tab"
+                          data-bs-target="#blockgrapes"
+                          aria-selected="true"
+                          aria-controls="blockgrapes">
+                        <i class="bi bi-grid-fill"></i>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button 
+                    class="nav-link"
+                    id="layer-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#layer"
+                    aria-selected="true"
+                    aria-controls="layer">
+                        <i class="bi bi-layers-fill"></i>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button 
+                    class="nav-link"
+                    id="trait-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#trait"
+                    aria-selected="true"
+                    aria-controls="trait">
+                        <i class="bi bi-gear-fill"></i>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button 
+                    class="nav-link"
+                    id="style-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#style"
+                    aria-selected="true"
+                    aria-controls="style">
+                        <i class="bi bi-palette-fill"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="blockgrapes" role="tabpanel" aria-labelledby="blockgrapes-tab">
+                    <div id="blockgrapes-container"></div>
+                </div>
+                <div class="tab-pane fade" id="layer" role="tabpanel" aria-labelledby="layer-tab">
+                    <div id="layer-container"></div>
+                </div>
+                <div class="tab-pane fade" id="trait" role="tabpanel" aria-labelledby="trait-tab">
+                    <div id="trait-container"></div>
+                </div>
+                <div class="tab-pane fade" id="style" role="tabpanel" aria-labelledby="style-tab">
+                    <div id="style-view"></div>
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../Recursos/GrapesJS/js/main.js" defer></script>

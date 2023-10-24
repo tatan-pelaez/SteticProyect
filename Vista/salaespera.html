@@ -1,0 +1,48 @@
+<div class="card border-0 shadow-sm mb-2">
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive appmobileh">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th><center>Turno</center></th>
+                            <th><center>Fecha</center></th>
+                            <th><center>Hora</center></th>
+                            <th><center>Doctor</center></th>
+                            <th><center>Paciente</center></th>
+                            <th><center>N&uacute;mero Identidad</center></th>
+                            <th><center>Consultorio</center></th>
+                            <th>
+                        </th></tr>
+                    </thead>
+                    <tbody id="tbodysalaesperahorizontal">
+                        <tr>
+                            <td align="center">AD1</td>
+                            <td align="center">2023-10-30</td>
+                            <td align="center">13:00</td>
+                            <td align="center">Doctor 1</td>
+                            <td align="center">Paciente 1 </td>
+                            <td align="center">12345</td>
+                            <td align="center">Drenaje</td>
+                            <td align="center"></td>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Atender" class="btn btn-sm btn-dark" style="width: 90%" onclick="selectformat()">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-responsive appmobilev">
+                <table class="table table-striped" id="tbodysalaesperavertical"><thead><tr><td align="center"><b>Turn</b></td><td align="center">AD1</td></tr><tr><td align="center"><b>Date</b></td><td align="center">2023-09-21</td></tr><tr><td align="center"><b>Time</b></td><td align="center">13:00</td></tr><tr><td align="center"><b>Doctor</b></td><td align="center">Miguel Gaviria</td></tr><tr><td align="center"><b>Patient</b></td><td align="center">Jhon  Franco </td></tr><tr><td align="center"><b>ID Patient</b></td><td align="center">ASD345</td></tr><tr><td align="center"><b>Room</b></td><td align="center">Odontology T</td></tr><tr><td colspan="2" align="center"><input type="submit" value="Attend" data-nombredoctor="Miguel Gaviria" data-idriapatient="16" data-idsprcialtypatient="12" data-nameriapatient="Assessment" data-iddoctorcare="ABC123" data-namepatientcare="Jhon  Franco " data-idpatientcare="ASD345" data-idappointment="58" data-idroom="2" class="btn btn-sm btn-primary" style="width: 90%" onclick="selectformat(this)"></td></tr><tr><td colspan="2"><hr></td></tr></thead></table>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function selectformat(){
+        var win = window.open('http://localhost:8080/Estetica/Vista/home.html?opc=PacientesAtencion', '_self');
+        win.focus();
+    };
+</script>

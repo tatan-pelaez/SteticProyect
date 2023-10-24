@@ -1,0 +1,143 @@
+
+<div class="row">
+    <div class="col-4">
+        <div class="form-floating mb-2">
+            <select id="listdoctorspatient" name="listdoctorspatientname" class="form-select">
+                <option value="0"> Selecccionar</option>
+                <option value="">Doctor 1</option>
+                <option value="">Doctor 2</option>
+                <option value="">Doctor 3</option>
+                <option value="">Doctor 4</option>
+            </select>
+            <label form="listdoctorspatient">Doctor</label>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-floating mb-2">
+            <input type="text" id="eidPatient" class="form-control" placeholder="search">
+            <label id="eidPatient" form="eidPatient">Filtro de Busqueda</label>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-floating mb-2">
+            <input type="date" id="fechafilter" class="form-control" onchange="dateappoinmentfilter(this)">
+            <label for="fechafilter">Fecha de Filtro</label>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card border-0 shadow-sm mb-2">
+            <div class="table-responsive appmobileh">
+                <table class="table table-striped" id="tablediarydoctor">
+                    <thead>
+                        <tr>
+                            <th><center>Fecha</center></th>
+                            <th><center>Hora Inicio</center></th>
+                            <th><center>Hora Final</center></th>
+                            <th><center>Doctor</center></th>
+                            <th><center>N&uacute;mero Paciente</center></th>
+                            <th><center>Paciente</center></th>
+                            <th><center>Tipo de Cita</center></th>
+                            <th><center>Sala de Espera</center></th>
+                            <th><center>Cancelar</center></th>
+                            <th><center>Estado</center></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyAppointments">
+                        <tr>
+                            <td align="center">2023-10-31</td>
+                            <td align="center">06:20</td>
+                            <td align="center">06:40</td>
+                            <td align="center">Doctor 1</td>
+                            <td align="center">12345</td>
+                            <td align="center">Paciente 1</td>
+                            <td align="center">Valoraci&oacute;n</td>
+                            <td align="center">
+                                <i class="text-dark bi bi-check-square-fill"  onclick="generarturno()" style="font-size: 20px;cursor: pointer;"></i>
+                            </td>
+                            <td align="center">
+                                <i class="text-dark bi bi-x-square-fill" style="font-size: 20px;cursor: pointer;" onclick="btncancelar(this)"></i>
+                            </td>
+                            <td align="center">
+                                <i class="bi bi-square-fill icon-state-process" style="font-size: 20px;"></i>
+                            </td>
+                            <td align="center">
+                                <button class="btn btn-dark" onclick="selectformat()">Atender</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Cancelar Cita -->
+<div class="modal" tabindex="-1" id="modalcancelacioncita">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Raz&oacute;n Cancelar Cita</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-modal">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-2 mx-2">
+                                <input id="idcitacancelar" type="hidden">
+                                <textarea id="motivocancelacion" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" id="guardarcancelacion">Cancelar Cita</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Generar Turno -->
+<div class="modal" tabindex="-1" id="generarturnocitamodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Generar Turno</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-modal">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-floating mb-2 mx-2">
+                                <select class="form-select" id="selectcategoria">
+                                    <option value="">Seleccionar</option>
+                                    <option value="">General</option>
+                                    <option value="">Prioridad</option>
+                                </select>
+                                <label for="selectcategoria">Selecccionar Categor&iacute;a</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" id="generarturnocita">Generar Turno</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function generarturno(){
+        $('#generarturnocitamodal').modal('show');
+    };
+    function btncancelar(option){
+        $("#modalcancelacioncita").modal("show");
+    };
+    function selectformat(){
+        var win = window.open('http://localhost:8080/Estetica/Vista/home.html?opc=PacientesAtencion', '_self');
+        win.focus();
+    };
+</script>

@@ -1,0 +1,131 @@
+<br>
+<div class="row">
+    <div class="col-sm-3">
+        <ul id="asignappointment" class="list-group list-group-flush listadodoctores">
+		    <li class="list-group-item px-0" style="cursor: pointer;">
+                <div class="ms-2 me-auto">
+                    <div class="name_doctor fw-bold">Paciente 1</div>
+                    <label class="id_doctor">12345</label>
+                </div>
+            </li>
+            <li class="list-group-item px-0" style="cursor: pointer;">
+                <div class="ms-2 me-auto">
+                    <div class="name_doctor fw-bold">Paciente 2</div>
+                    <label class="id_doctor">12345</label>
+                </div>
+            </li>
+            <li class="list-group-item px-0" style="cursor: pointer;">
+                <div class="ms-2 me-auto">
+                    <div class="name_doctor fw-bold">Paciente 3</div>
+                    <label class="id_doctor">12345</label>
+                </div>
+            </li>
+            <li class="list-group-item px-0" style="cursor: pointer;">
+                <div class="ms-2 me-auto">
+                    <div class="name_doctor fw-bold">Paciente 4</div>
+                    <label class="id_doctor">12345</label>
+                </div>
+            </li>
+            <li class="list-group-item px-0" style="cursor: pointer;">
+                <div class="ms-2 me-auto">
+                    <div class="name_doctor fw-bold">Paciente 5</div>
+                    <label class="id_doctor">12345</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-9">
+        <div class="row">
+            <form>
+                <div class="row g-2">
+                    <div class="col-sm-3">
+                        <div class="form-floating mb-2">
+                            <input type="date" class="form-control" id="dateAppointmentFrm" placeholder="Date" required="" onchange="dateappoinment(this)">
+                            <label for="dateAppointmentFrm">Fecha</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-floating mb-2">
+                            <select id="SpecialtyDoctors" class="form-select" aria-label="serviceTypeFrm" name="SpecialtyDoctors" onchange="selectSpecialty(this)">
+                                <option selected="" value="0">Selecccione</option>
+                                <option value="1">Valoraci&oacute;n</option>
+                                <option value="60">Hidrolaser</option>
+                                <option value="61">Drenaje</option>
+                                <option value="61">Moldeo</option>
+                            </select>
+                            <label for="professionalFrm">Tipo de Cita</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-floating mb-2">
+                            <select id="SelectDoctors" class="form-select" aria-label="serviceTypeFrm" name="serviceTypeFrm" required="">
+                                <option selected="" value="0">Selecccionar</option>
+                                <option selected="" value="0">Doctor 1</option>
+                                <option selected="" value="0">Doctor 2</option>
+                                <option selected="" value="0">Doctor 3</option>
+                                <option selected="" value="0">Doctor 4</option>
+                            </select>
+                            <label for="professionalFrm">Especialista</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="display: flex;justify-content: center;align-items: center;">
+                        <center>
+                            <button class="btn btn-dark">Almacenar</button>
+                        </center>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col tablaschedule">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Hora Inicio</th>
+                                <th>Hora Final</th>
+                                <th>Especialista</th>
+                                <th>Tipo</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyAppointments">
+                            <tr>
+                                <td>2023-10-30</td>
+                                <td>08:40</td>
+                                <td>09:00</td>
+                                <td>Doctor 1</td>
+                                <td>Valoraci&oacute;n</td>
+                                <td>En Proceso</td>
+                            </tr>
+                            <tr>
+                                <td>2023-09-30</td>
+                                <td>09:40</td>
+                                <td>10:00</td>
+                                <td>Doctor 1</td>
+                                <td>Moldeamiento</td>
+                                <td>Atendida</td>
+                            </tr>
+                            <tr>
+                                <td>2023-08-30</td>
+                                <td>09:40</td>
+                                <td>10:00</td>
+                                <td>Doctor 1</td>
+                                <td>Moldeamiento</td>
+                                <td>Atendida</td>
+                            </tr>
+                            <tr>
+                                <td>2023-07-30</td>
+                                <td>09:40</td>
+                                <td>10:00</td>
+                                <td>Doctor 1</td>
+                                <td>Moldeamiento</td>
+                                <td>Atendida</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
