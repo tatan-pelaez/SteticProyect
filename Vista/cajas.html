@@ -1,0 +1,143 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<br>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="form-floating mb-2" >
+            <input type="text" class="form-control" id="usuario">
+            <label for="usuario">Concepto</label>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-floating mb-2" >
+            <input type="number" class="form-control" id="clave">
+            <label for="clave">Valor</label>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-floating mb-2">
+            <select class="form-select" id="rol" placeholder="Restaurante">
+                <option value="0">Seleccionar</option>
+                <option value="1">Ingreso</option>
+                <option value="2">Egreso</option>
+            </select>
+            <label for="rol">Tipo</label>
+        </div>
+    </div>
+    <div class="col-sm-3" style="display: flex;justify-content: center;align-items: center;">
+        <center>
+            <button class="btn btn-dark">Almacenar</button>
+        </center>
+    </div>
+</div>
+<hr>
+<diw class="row">
+    <div class="col-sm-6">
+        <center>
+            <h4>Ingresos</h4>
+        </center>
+        <div class="table-responsive">
+            <table class="table table-striped" id="tablausuarios">
+                <thead>
+                    <tr>
+                        <th><center>Fecha</center></th>
+                        <th><center>Concepto</center></th>
+                        <th><center>Valor</center></th>
+                        <th><center>Acciones</center></th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyusuariosH">
+                    <tr>
+                        <td align="center">2023-10-24</td>
+                        <td align="center">Arriendo</td>
+                        <td align="center">$850.000</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td align="center">2023-10-25</td>
+                        <td align="center">Nomina</td>
+                        <td align="center">$300,000</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <center>
+            <h4>Egresos</h4>
+        </center>
+        <div class="table-responsive">
+            <table class="table table-striped" id="tablausuarios">
+                <thead>
+                    <tr>
+                        <th><center>Fecha</center></th>
+                        <th><center>Concepto</center></th>
+                        <th><center>Valor</center></th>
+                        <th><center>Acciones</center></th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyusuariosH">
+                    <tr>
+                        <td align="center">2023-10-24</td>
+                        <td align="center">Factura 1</td>
+                        <td align="center">$1,000,000</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td align="center">2023-10-25</td>
+                        <td align="center">Factura 2</td>
+                        <td align="center">$2,000,000</td>
+                        <td align="center"><button class="btn btneditarusuario"><i class="bi bi-pencil"></i></button><button class="btn"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</diw>
+<div class="row">
+    <div class="col-sm-4"><span><b>Total Ingresos</b></span> $ 1,150,000</div>
+    <div class="col-sm-4"><span><b>Total Egresos</b></span> $ 3,000,000</div>
+    <div class="col-sm-4"><span><b>Total</b></span> $ 1,850,000</div>
+</div>
+<hr>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript">
+    $(function () {
+$('#container').highcharts({
+title: {
+    text: 'Tabla de Ingresos y Egresos',
+    x: -20 //center
+},
+xAxis: {
+    categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
+        'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+},
+yAxis: {
+    title: {
+        text: 'Valor $'
+    },
+    plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+    }]
+},
+tooltip: {
+    valueSuffix: '°C'
+},
+legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle',
+    borderWidth: 0
+},
+series: [{
+    name: 'Ingreso',
+    data: [20000000,30000000,50000000,10000000,15550000]
+}, {
+    name: 'Egreso',
+    data: [7500000,12000000,23000000,7000000,10000000]
+}]
+});
+});
+</script>
