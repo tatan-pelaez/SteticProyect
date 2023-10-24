@@ -38,13 +38,13 @@
         <div class="row">
             <form>
                 <div class="row g-2">
-                    <div class="col-sm-3">
+                    <div class="col">
                         <div class="form-floating mb-2">
                             <input type="date" class="form-control" id="dateAppointmentFrm" placeholder="Date" required="" onchange="dateappoinment(this)">
                             <label for="dateAppointmentFrm">Fecha</label>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <div class="form-floating mb-2">
                             <select id="SpecialtyDoctors" class="form-select" aria-label="serviceTypeFrm" name="SpecialtyDoctors" onchange="selectSpecialty(this)">
                                 <option selected="" value="0">Selecccione</option>
@@ -56,7 +56,7 @@
                             <label for="professionalFrm">Tipo de Cita</label>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col">
                         <div class="form-floating mb-2">
                             <select id="SelectDoctors" class="form-select" aria-label="serviceTypeFrm" name="serviceTypeFrm" required="">
                                 <option selected="" value="0">Selecccionar</option>
@@ -68,7 +68,13 @@
                             <label for="professionalFrm">Especialista</label>
                         </div>
                     </div>
-                    <div class="col-sm-3" style="display: flex;justify-content: center;align-items: center;">
+			<div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="time" class="form-control" id="durationFrc">
+                            <label for="durationFrc">Hora</label>
+                        </div>
+                    </div>
+                    <div class="col" style="display: flex;justify-content: center;align-items: center;">
                         <center>
                             <button class="btn btn-dark">Almacenar</button>
                         </center>
