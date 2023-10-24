@@ -84,12 +84,12 @@
 		$("#botoningresar").on( "click", function() {
 			if(($('#usuario').val() == '') == true){
 				alert('Usuario se encuentra vacio');
-			}else if(($('#clave').val() == '') == true){
+			}else if(($('#txtPassword').val() == '') == true){
 				alert('Contraseña se encuentra vacio');
 			}else{
 				if(($('#usuario').val() == 'Admin') == false){
 					alert('Usuario Incorrecto');
-				}else if(($('#clave').val() === '123') == false){
+				}else if(($('#txtPassword').val() === '123') == false){
 					alert('Clave Incorrecta');
 				}else{
 					window.location.href = 'https://tatan-pelaez.github.io/SteticProyect/Vista/home.html';
